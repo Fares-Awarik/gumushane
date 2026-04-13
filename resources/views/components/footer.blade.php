@@ -73,6 +73,31 @@
   color: var(--white) !important;
 }
 
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.footer-social-link:hover {
+  border-color: #f2c16b;
+  color: #f2c16b;
+  transform: translateY(-2px);
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 18px 0 22px;
@@ -126,6 +151,21 @@
       <p>
         Şiran'ın yüksek rakımlı yaylalarından sofralarınıza ulaşan doğal, katkısız ve güvenilir bal.
       </p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/balcitolgasahin?igsh=MWJ4bTdwbjViZjZmbA==" class="footer-social-link" target="_blank" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="mailto:sahinkaan348@gmail.com" class="footer-social-link" aria-label="E-posta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+        </a>
+      </div>
     </div>
 
     <div class="footer-col">
