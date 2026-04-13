@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const fs=require\\('fs'\\);const c=fs.readFileSync\\('C:/Users/fares/.claude/projects/D--Laravel-Projects-Gumushane/8856e9bf-72a4-44fc-8eac-eeb246af17bc/tool-results/toolu_01AqeW6XFVBnFbMQFmht3JLw.json','utf8'\\);console.log\\(c.length\\);\")",
+      "Bash(node -e ':*)",
+      "mcp__claude_ai_Figma__get_design_context",
+      "Bash(php artisan:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/urunler)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/hakkimizda)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/iletisim)"
+    ]
+  }
+}
