@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-
 class PageController extends Controller
 {
     public function home()
     {
-        $featuredProducts = Product::where('active', true)->take(3)->get();
-        return view('home', compact('featuredProducts'));
+        return view('home');
     }
 
     public function products()
     {
-        $products = Product::where('active', true)->get();
-        return view('products', compact('products'));
+        return view('products');
     }
 
     public function about()
