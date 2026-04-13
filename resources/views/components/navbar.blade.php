@@ -216,6 +216,20 @@
     border-radius: 10px;
     padding-inline: 14px !important;
   }
+
+  .mobile-menu-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-menu-social .nav-social-link {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -284,5 +298,21 @@
     <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">Hakkımızda</a>
     <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">İletişim</a>
     <a href="https://wa.me/905559952917" class="mobile-menu-cta" target="_blank">WhatsApp ile Sipariş Ver</a>
+
+    <div class="mobile-menu-social">
+      <a href="https://www.instagram.com/balcitolgasahin?igsh=MWJ4bTdwbjViZjZmbA==" class="nav-social-link" target="_blank" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a href="mailto:sahinkaan348@gmail.com" class="nav-social-link" aria-label="E-posta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="2,4 12,13 22,4"/>
+        </svg>
+      </a>
+    </div>
   </div>
 </nav>
