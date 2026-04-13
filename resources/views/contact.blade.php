@@ -4,6 +4,7 @@
 
 @section('content')
 
+<x-navbar />
 {{-- ══ PAGE HEADER ══ --}}
 <section class="page-header contact-header">
   <h1 class="page-header-title">Bize Ulaşın</h1>
@@ -97,5 +98,7 @@
 
   </div>
 </section>
+
+<x-footer />
 
 @endsection

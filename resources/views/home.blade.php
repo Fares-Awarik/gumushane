@@ -3,64 +3,10 @@
 @section('title', 'Anasayfa – Gümüşhane Yayla Balı')
 
 @section('content')
+<x-navbar />
 
-{{-- ══ HERO SECTION ══ --}}
-<section class="hero">
+<x-hero />
 
-  {{-- Hex BG 1 - cream --}}
-  <div class="hero-hex hero-hex-1">
-    <img src="https://www.figma.com/api/mcp/asset/d06136f5-dea5-4749-aa8e-7356b3fabc7f" alt="" aria-hidden="true"/>
-  </div>
-
-  {{-- Hex BG 2 - gold --}}
-  <div class="hero-hex hero-hex-2">
-    <img src="https://www.figma.com/api/mcp/asset/891d569d-1b97-41cc-be85-7b6179a843f0" alt="" aria-hidden="true"/>
-  </div>
-
-  {{-- LEFT --}}
-  <div class="hero-left">
-    <div class="hero-badge">%100 Doğal İçerik</div>
-
-    <div class="hero-heading">
-      <h1>
-        Gümüşhane Şiran<br/>
-        1750 Rakım<br/>
-        Üretilen Doğal Bal
-      </h1>
-    </div>
-
-    <div class="hero-desc-wrap">
-      <p class="hero-desc">
-        Arılarımız kıştan çıktı, kovanlarımızın ilkbahar
-        temizliği ve bakımını özenle yapıyoruz. Bahara
-        hazırlık; yaza temiz, güçlü kovan ve kolonilerle en
-        doğal balı sizlere sunmak için çalışıyoruz.
-      </p>
-    </div>
-
-    <div class="hero-btns">
-      <a href="{{ route('products') }}" class="btn-siparis">Sipariş Ver</a>
-      <button class="btn-video" onclick="document.getElementById('videoModal').style.display='flex'">
-        <span class="play-circle">
-          <img src="https://www.figma.com/api/mcp/asset/ec0d474f-3e25-41e0-a9f1-95cdd7eb8df2" alt="" width="16" height="16"/>
-        </span>
-        <span class="btn-video-text">Hikayemizi İzle</span>
-      </button>
-    </div>
-  </div>
-
-  {{-- RIGHT - Farm Photo --}}
-  <div class="hero-right">
-    <div class="hero-img-wrap">
-      <img
-        src="https://www.figma.com/api/mcp/asset/e828450a-a1a2-459c-8d8e-4143f7247fc2"
-        alt="Gümüşhane arı çiftliği"
-        class="hero-img"
-      />
-    </div>
-  </div>
-
-</section>
 
 {{-- ══ NEDEN BIZ SECTION ══ --}}
 <section class="neden" id="neden">
@@ -144,5 +90,7 @@
     class="brand-logo-large"
   />
 </section>
+
+<x-footer />
 
 @endsection

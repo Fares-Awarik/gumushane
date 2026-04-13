@@ -3,6 +3,7 @@
 @section('title', 'Ürünler – Gümüşhane Yayla Balı')
 
 @section('content')
+<x-navbar />
 
 {{-- ══ PAGE HEADER ══ --}}
 <section class="page-header">
@@ -21,7 +22,7 @@
     {{-- Product 1 --}}
     <div class="product-card">
       <div class="product-img-wrap">
-        <img src="{{ asset('images/products/karakovan.jpg') }}" alt="Karakovan Petek Balı" class="product-img"/>
+        <img src="{{ asset('images/1.jpeg') }}" alt="Karakovan Petek Balı" class="product-img"/>
         <span class="product-badge">Kargo Bedava</span>
       </div>
       <div class="product-info">
@@ -34,17 +35,9 @@
         </div>
         <div class="product-footer">
           <div class="product-price">
-            <span class="price-amount">1850₺</span>
+            <span class="price-amount">2500₺</span>
             <span class="price-unit">/ kg</span>
           </div>
-          <button class="btn-sepet">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="1.67" stroke-linejoin="round"/>
-              <line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="1.67"/>
-              <path d="M16 10a4 4 0 01-8 0" stroke="white" stroke-width="1.67"/>
-            </svg>
-            Sepete Ekle
-          </button>
         </div>
       </div>
     </div>
@@ -52,7 +45,7 @@
     {{-- Product 2 --}}
     <div class="product-card">
       <div class="product-img-wrap">
-        <img src="{{ asset('images/products/petek-cicek.jpg') }}" alt="Petek Çiçek Balı" class="product-img"/>
+        <img src="{{ asset('images/2.jpeg') }}" alt="Petek Çiçek Balı" class="product-img"/>
         <span class="product-badge">Kargo Bedava</span>
       </div>
       <div class="product-info">
@@ -68,14 +61,6 @@
             <span class="price-amount">1500₺</span>
             <span class="price-unit">/ kg</span>
           </div>
-          <button class="btn-sepet">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="1.67" stroke-linejoin="round"/>
-              <line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="1.67"/>
-              <path d="M16 10a4 4 0 01-8 0" stroke="white" stroke-width="1.67"/>
-            </svg>
-            Sepete Ekle
-          </button>
         </div>
       </div>
     </div>
@@ -83,7 +68,7 @@
     {{-- Product 3 --}}
     <div class="product-card">
       <div class="product-img-wrap">
-        <img src="{{ asset('images/products/suzme.jpg') }}" alt="Süzme Bal" class="product-img"/>
+        <img src="{{ asset('images/4.jpeg') }}" alt="Süzme Bal" class="product-img"/>
         <span class="product-badge">Kargo Bedava</span>
       </div>
       <div class="product-info">
@@ -99,14 +84,6 @@
             <span class="price-amount">1550₺</span>
             <span class="price-unit">/ kg</span>
           </div>
-          <button class="btn-sepet">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="1.67" stroke-linejoin="round"/>
-              <line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="1.67"/>
-              <path d="M16 10a4 4 0 01-8 0" stroke="white" stroke-width="1.67"/>
-            </svg>
-            Sepete Ekle
-          </button>
         </div>
       </div>
     </div>
@@ -114,7 +91,7 @@
     {{-- Product 4 --}}
     <div class="product-card">
       <div class="product-img-wrap">
-        <img src="{{ asset('images/products/propolis.jpg') }}" alt="Ham Propolis" class="product-img"/>
+        <img src="{{ asset('images/0.png') }}" alt="Ham Propolis" class="product-img"/>
         <span class="product-badge">Kargo Bedava</span>
       </div>
       <div class="product-info">
@@ -132,19 +109,13 @@
           <div class="product-price">
             <span class="price-amount">850₺</span>
           </div>
-          <button class="btn-sepet">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="1.67" stroke-linejoin="round"/>
-              <line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="1.67"/>
-              <path d="M16 10a4 4 0 01-8 0" stroke="white" stroke-width="1.67"/>
-            </svg>
-            Sepete Ekle
-          </button>
         </div>
       </div>
     </div>
 
   </div>
 </section>
+
+<x-footer />
 
 @endsection

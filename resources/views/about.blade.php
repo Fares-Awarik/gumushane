@@ -3,6 +3,7 @@
 @section('title', 'Hakkımızda – Gümüşhane Yayla Balı')
 
 @section('content')
+<x-navbar />
 
 {{-- ══ PAGE HEADER ══ --}}
 <section class="page-header about-header">
@@ -17,7 +18,7 @@
     {{-- Section 1 --}}
     <div class="about-section">
       <div class="about-img-wrap">
-        <img src="{{ asset('images/about/yayla.jpg') }}" alt="Gümüşhane yaylalarında arı kovanları" class="about-img"/>
+        <img src="{{ asset('images/5.jpeg') }}" alt="Gümüşhane yaylalarında arı kovanları" class="about-img"/>
       </div>
       <div class="about-text">
         <div class="about-category">Bizim Hikayemiz</div>
@@ -34,7 +35,7 @@
     {{-- Section 2 (reversed) --}}
     <div class="about-section reverse">
       <div class="about-img-wrap">
-        <img src="{{ asset('images/about/uretim.jpg') }}" alt="Geleneksel bal üretimi" class="about-img short"/>
+        <img src="{{ asset('images/3.jpeg') }}" alt="Geleneksel bal üretimi" class="about-img short"/>
       </div>
       <div class="about-text">
         <div class="about-category">Üretim Felsefemiz</div>
@@ -88,5 +89,7 @@
 
   </div>
 </section>
+
+<x-footer />
 
 @endsection
