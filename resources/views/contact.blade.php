@@ -42,7 +42,7 @@
         </div>
         <div class="contact-card-body">
           <span class="contact-card-title">Telefon &amp; WhatsApp</span>
-          <p class="contact-card-text">+90 555 123 45 67<br/>Pzt - Cts: 09:00 - 18:00</p>
+          <p class="contact-card-text">+90 555 123 45 67<br/>7/24 açıktır</p>
         </div>
       </div>
 
@@ -55,7 +55,7 @@
         </div>
         <div class="contact-card-body">
           <span class="contact-card-title">E-Posta Adresi</span>
-          <p class="contact-card-text">bilgi@gumushanebal.com<br/>destek@gumushanebal.com</p>
+          <p class="contact-card-text">sahinkaan348@gmail.com</p>
         </div>
       </div>
     </div>

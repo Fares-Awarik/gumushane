@@ -77,6 +77,33 @@
   flex-shrink: 0;
 }
 
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-social-link:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
 .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -142,7 +169,8 @@
    ══════════════════════════════ */
 @media (max-width: 991px) {
   .nav-links,
-  .nav-cta {
+  .nav-cta,
+  .nav-social {
     display: none;
   }
 
@@ -207,7 +235,7 @@
 
     <a href="{{ route('home') }}" class="nav-logo">
       <img
-        src="https://www.figma.com/api/mcp/asset/d26167cf-e9b1-4c9e-9d6d-6e5c0d08042f"
+        src="{{ asset('images/logo.png') }}"
         alt="Gümüşhane Yayla Balı Logo"
         class="nav-logo-img"
       />
@@ -221,6 +249,24 @@
     </ul>
 
     <div class="nav-actions">
+
+      {{-- Social Icons --}}
+      <div class="nav-social">
+        <a href="https://www.instagram.com/balcitolgasahin?igsh=MWJ4bTdwbjViZjZmbA==" class="nav-social-link" target="_blank" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="mailto:sahinkaan348@gmail.com" class="nav-social-link" aria-label="E-posta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+        </a>
+      </div>
+
       <a href="https://wa.me/905559952917" class="nav-cta" target="_blank">Sipariş Ver</a>
 
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menüyü Aç/Kapat" aria-expanded="false">

@@ -142,7 +142,7 @@
       <h4>İletişim</h4>
       <ul class="footer-contact">
         <li><a href="tel:+905559952917">+90 555 995 29 17</a></li>
-        <li><a href="mailto:bilgi@gumushanebal.com">bilgi@gumushanebal.com</a></li>
+        <li><a href="mailto:sahinkaan348@gmail.com">sahinkaan348@gmail.com</a></li>
         <li>Gümüşhane, Türkiye</li>
       </ul>
     </div>

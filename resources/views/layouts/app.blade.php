@@ -19,7 +19,7 @@
 
   {{-- WHATSAPP FLOAT --}}
   <a href="https://wa.me/905559952917" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <img src="https://www.figma.com/api/mcp/asset/f125e768-05b2-4217-8c36-71082b752e99" alt="WhatsApp" width="32" height="32"/>
+    <img src="{{ asset('images/whatsapp.png') }}" alt="WhatsApp" width="32" height="32"/>
   </a>
 
 
