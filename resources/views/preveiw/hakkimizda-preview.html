@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hakkımızda – Gümüşhane Yayla Balı</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FFF8F2; --cream-warm: #FFF1D9; --card-bg: #F3E9E0;
+      --gold: #B86B00; --text-dark: #2C2B29; --text-mid: #4B3B2A;
+      --text-light: #8B7A6D; --white: #FFFFFF; --border: rgba(0,0,0,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text-dark); min-width: 1440px; }
+
+    /* ══ NAVBAR ══ */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; flex-direction: row; align-items: center;
+      justify-content: space-between; padding: 32px 64px; height: 116px;
+      background: var(--cream-warm);
+    }
+    .nav-logo img { width: 158px; height: 84px; object-fit: contain; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 15px; line-height: 22px; color: var(--text-dark); font-weight: 500; opacity: 0.8; }
+    .nav-links a.active { font-weight: 600; opacity: 1; }
+    .nav-icons { display: flex; gap: 24px; align-items: center; }
+    .nav-icon-btn { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background: none; border: none; cursor: pointer; position: relative; }
+    .cart-badge { position: absolute; width: 8px; height: 8px; right: 4px; top: 4px; background: var(--gold); border-radius: 4px; }
+
+    /* ══ PAGE HEADER ══ */
+    .page-header {
+      width: 100%; height: 383px;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding: 160px 64px 80px; gap: 16px;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                  url('https://www.figma.com/api/mcp/asset/e828450a-a1a2-459c-8d8e-4143f7247fc2') center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
+      margin-top: 116px;
+    }
+    .page-header-title {
+      font-weight: 700; font-size: 48px; line-height: 72px;
+      letter-spacing: -0.96px; color: var(--white); text-align: center;
+      text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    }
+    .page-header-desc {
+      width: 569.52px; font-weight: 400; font-size: 18px; line-height: 27px;
+      color: var(--text-light); text-align: center;
+    }
+
+    /* ══ ABOUT CONTENT ══ */
+    .about-content {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 0 64px; background: var(--cream);
+    }
+
+    .about-inner {
+      display: flex; flex-direction: column; align-items: flex-start;
+      padding: 100px 0 120px; gap: 120px;
+      width: 1072px; max-width: 1200px;
+    }
+
+    /* ══ SECTION ══ */
+    .about-section {
+      display: flex; flex-direction: row; align-items: flex-start;
+      width: 1072px; gap: 80px;
+    }
+
+    .about-section.reverse { flex-direction: row-reverse; }
+
+    /* Image */
+    .about-img-wrap {
+      flex-shrink: 0; width: 496px;
+      background: var(--card-bg);
+      box-shadow: 0px 24px 48px rgba(0,0,0,0.04);
+      border-radius: 8px; overflow: hidden;
+    }
+
+    .about-img {
+      width: 496px; height: 100%;
+      min-height: 494.94px; object-fit: cover; display: block;
+    }
+
+    .about-img.short { min-height: 433.75px; }
+
+    /* Text */
+    .about-text { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding-top: 8px; }
+
+    .about-category {
+      font-weight: 600; font-size: 14px; line-height: 21px;
+      letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 45px;
+    }
+
+    .about-title {
+      font-weight: 700; font-size: 40px; line-height: 48px;
+      letter-spacing: -0.4px; color: var(--text-dark);
+      margin-bottom: 32px;
+    }
+
+    .about-body {
+      font-weight: 400; font-size: 17px; line-height: 31px;
+      color: var(--text-light); margin-bottom: 24px;
+      width: 495.28px;
+    }
+
+    .about-body:last-child { margin-bottom: 0; }
+
+    /* ══ VALUES GRID ══ */
+    .values-grid {
+      width: 1072px;
+      border-top: 1px solid var(--border);
+      padding-top: 101px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .value-item {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 20px; text-align: center;
+    }
+
+    .value-icon-wrap {
+      display: flex; justify-content: center; align-items: center;
+      width: 80px; height: 80px;
+      background: var(--cream-warm);
+      border-radius: 40px;
+      flex-shrink: 0;
+    }
+
+    .value-title {
+      font-weight: 700; font-size: 22px; line-height: 33px;
+      color: var(--text-dark);
+    }
+
+    .value-desc {
+      font-weight: 400; font-size: 16px; line-height: 26px;
+      color: var(--text-light); max-width: 322px;
+    }
+
+    /* ══ WHATSAPP ══ */
+    .whatsapp-float {
+      position: fixed; right: 64px; bottom: 63.73px;
+      width: 64px; height: 64px; background: #27AE60;
+      box-shadow: 0px 16px 32px rgba(0,0,0,0.1);
+      border-radius: 32px; display: flex; justify-content: center; align-items: center;
+      z-index: 99; text-decoration: none; transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.06); }
+
+    /* ══ FOOTER ══ */
+    .footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 64px; height: 159px;
+      background: var(--cream-warm); border-top: 1px solid var(--border);
+    }
+    .footer-brand { font-weight: 700; font-size: 20px; line-height: 30px; letter-spacing: 2px; color: var(--text-dark); }
+    .footer-copy { font-weight: 400; font-size: 14px; line-height: 21px; color: var(--text-light); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="https://www.figma.com/api/mcp/asset/d26167cf-e9b1-4c9e-9d6d-6e5c0d08042f" alt="Gümüşhane Yayla Balı"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Anasayfa</a></li>
+    <li><a href="products.html">Ürünler</a></li>
+    <li><a href="#" class="active">Hakkımızda</a></li>
+    <li><a href="contact.html">İletişim</a></li>
+  </ul>
+  <div class="nav-icons">
+    <button class="nav-icon-btn">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="#2C2B29" stroke-width="1.67"/><path d="M13.5 13.5L17 17" stroke="#2C2B29" stroke-width="1.67" stroke-linecap="round"/></svg>
+    </button>
+    <button class="nav-icon-btn cart-btn">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="#2C2B29" stroke-width="1.67"/><line x1="3" y1="6" x2="21" y2="6" stroke="#2C2B29" stroke-width="1.67"/></svg>
+      <span class="cart-badge"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <h1 class="page-header-title">Hakkımızda</h1>
+  <p class="page-header-desc">Doğanın en saf halini, nesillerdir süregelen bir tutkuyla sofralarınıza taşıyoruz.</p>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="about-content">
+  <div class="about-inner">
+
+    <!-- Section 1: Bizim Hikayemiz -->
+    <div class="about-section">
+      <div class="about-img-wrap">
+        <img
+          src="https://www.figma.com/api/mcp/asset/e828450a-a1a2-459c-8d8e-4143f7247fc2"
+          alt="Gümüşhane yaylalarında arı kovanları"
+          class="about-img"
+        />
+      </div>
+      <div class="about-text">
+        <div class="about-category">Bizim Hikayemiz</div>
+        <h2 class="about-title">1750 Rakımlı Yaylalardan Gelen Mucize</h2>
+        <p class="about-body">
+          Gümüşhane Şiran'ın eşsiz doğasında, 1750 rakımlı el değmemiş yaylalarda başlayan serüvenimiz nesillerdir aynı tutkuyla devam ediyor. Kışın zorlu şartlarından çıkan arılarımız için bahar ayları, kovanların temizlik ve bakımıyla geçer. Yaza hazırlanan güçlü kolonilerimiz, o tertemiz dağ havasında, zengin bitki florasından topladıkları nektarlarla şifalı ballarımızı üretirler.
+        </p>
+        <p class="about-body">
+          Bizim için arıcılık sadece bir meslek değil; doğanın ritmine ayak uydurmak, arılarımızla birlikte yaşadığımız bir yaşam biçimidir.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2: Üretim Felsefemiz (reversed) -->
+    <div class="about-section reverse">
+      <div class="about-img-wrap">
+        <img
+          src="https://www.figma.com/api/mcp/asset/891d569d-1b97-41cc-be85-7b6179a843f0"
+          alt="Geleneksel bal üretimi"
+          class="about-img short"
+        />
+      </div>
+      <div class="about-text">
+        <div class="about-category">Üretim Felsefemiz</div>
+        <h2 class="about-title">Geleneksel Yöntemler, Katkısız Lezzet</h2>
+        <p class="about-body">
+          Doğanın kusursuz dengesine saygı duyarak, arılarımızın yaşam döngüsüne müdahale etmeden üretim yapıyoruz. Karakovan peteklerimizde balmumu tamamen arılarımız tarafından, doğal yollarla örülür.
+        </p>
+        <p class="about-body">
+          Üretimimizin hiçbir aşamasında şeker şurubu, kimyasal koruyucu veya tarım ilacı kullanmıyoruz. Balımızı kovandan çıktığı en saf ve şifalı haliyle, ailenize ve sevdiklerinize güvenle sunabilmeniz için özenle paketliyoruz.
+        </p>
+      </div>
+    </div>
+
+    <!-- Values Grid -->
+    <div class="values-grid">
+
+      <!-- Value 1 -->
+      <div class="value-item">
+        <div class="value-icon-wrap">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M20 6C20 6 8 14 8 24C8 30.627 13.373 36 20 36C26.627 36 32 30.627 32 24C32 14 20 6 20 6Z" stroke="#B86B00" stroke-width="3.33" stroke-linejoin="round"/>
+            <path d="M14 26C14 26 15.5 30 20 30C24.5 30 26 26 26 26" stroke="#B86B00" stroke-width="3.33" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="value-title">%100 Doğal</h3>
+        <p class="value-desc">Ürünlerimiz hiçbir koruyucu veya katkı maddesi içermez. Arıların bize sunduğu bu mucizeyi en saf haliyle koruyoruz.</p>
+      </div>
+
+      <!-- Value 2 -->
+      <div class="value-item">
+        <div class="value-icon-wrap">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M20 6L10 11V22C10 28.627 14.477 34.373 20 36C25.523 34.373 30 28.627 30 22V11L20 6Z" stroke="#B86B00" stroke-width="3.33" stroke-linejoin="round"/>
+            <path d="M15 21L18 24L25 17" stroke="#B86B00" stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="value-title">Üstün Kalite</h3>
+        <p class="value-desc">Gümüşhane'nin endemik bitki türlerine sahip zengin florasında, uzmanlıkla ve büyük bir özenle hasat edilir.</p>
+      </div>
+
+      <!-- Value 3 -->
+      <div class="value-item">
+        <div class="value-icon-wrap">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="13" stroke="#B86B00" stroke-width="3.33"/>
+            <path d="M20 14V20L24 24" stroke="#B86B00" stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 8L12 12" stroke="#B86B00" stroke-width="3.33" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="value-title">Geleneksel</h3>
+        <p class="value-desc">Yüzyıllardır süregelen ata yadigarı üretim yöntemleriyle, sürdürülebilir ve doğaya saygılı bir arıcılık yapıyoruz.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-brand">GÜMÜŞHANE</span>
+  <span class="footer-copy">© 2024 Gümüşhane Premium Bal. Tüm Hakları Saklıdır.</span>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/905559952917" class="whatsapp-float" target="_blank">
+  <img src="https://www.figma.com/api/mcp/asset/f125e768-05b2-4217-8c36-71082b752e99" alt="WhatsApp" width="32" height="32"/>
+</a>
+
+</body>
+</html>

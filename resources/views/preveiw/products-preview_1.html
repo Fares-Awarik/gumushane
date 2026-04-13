@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ürünler – Gümüşhane Yayla Balı</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FFF8F2; --cream-warm: #FFF1D9; --card-bg: #F3E9E0;
+      --gold: #B86B00; --text-dark: #2C2B29; --text-mid: #4B3B2A;
+      --text-light: #8B7A6D; --white: #FFFFFF; --border: rgba(0,0,0,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text-dark); min-width: 1440px; }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; flex-direction: row; align-items: center;
+      justify-content: space-between; padding: 32px 64px; height: 148px;
+      background: rgba(255,248,242,0.96); backdrop-filter: blur(10px);
+    }
+    .nav-logo img { width: 158px; height: 84px; object-fit: contain; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 15px; color: var(--text-dark); font-weight: 500; opacity: 0.8; }
+    .nav-links a.active { font-weight: 600; opacity: 1; }
+    .nav-icons { display: flex; gap: 24px; }
+    .nav-icon-btn { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background: none; border: none; cursor: pointer; position: relative; }
+    .cart-badge { position: absolute; width: 8px; height: 8px; right: 4px; top: 4px; background: var(--gold); border-radius: 4px; }
+
+    /* PAGE HEADER */
+    .page-header {
+      width: 100%; min-height: 383px;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding: 160px 64px 80px; gap: 16px;
+      background: linear-gradient(rgba(184,107,0,0.6), rgba(120,70,0,0.7)),
+                  url('https://www.figma.com/api/mcp/asset/e828450a-a1a2-459c-8d8e-4143f7247fc2') center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
+      margin-top: 148px;
+    }
+    .page-header-title {
+      font-weight: 700; font-size: 48px; line-height: 72px;
+      letter-spacing: -0.96px; color: var(--white); text-align: center;
+      text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    }
+    .page-header-desc {
+      width: 600px; font-weight: 600; font-size: 18px; line-height: 27px;
+      color: #FFF1D9; text-align: center;
+    }
+
+    /* PRODUCTS */
+    .products-section { display: flex; flex-direction: column; align-items: center; background: var(--cream); padding: 0 64px; }
+    .products-list { display: flex; flex-direction: column; align-items: flex-start; padding: 80px 0 120px; gap: 48px; width: 1072px; }
+
+    .product-card {
+      display: flex; flex-direction: row; align-items: flex-start;
+      width: 1072px; background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0px 12px 32px rgba(0,0,0,0.02);
+      border-radius: 8px; overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .product-card:hover { box-shadow: 0px 20px 48px rgba(0,0,0,0.07); transform: translateY(-2px); }
+
+    .product-img-wrap { position: relative; width: 450px; min-height: 454.75px; background: var(--card-bg); flex-shrink: 0; }
+    .product-img { width: 450px; height: 100%; min-height: 454.75px; object-fit: cover; display: block; }
+    .product-badge { position: absolute; top: 24px; left: 24px; padding: 8px 16px; background: #27AE60; border-radius: 12px; font-weight: 700; font-size: 13px; line-height: 20px; letter-spacing: 0.26px; color: var(--white); }
+
+    .product-info { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 56px; width: 620px; flex-grow: 1; }
+    .product-category { font-weight: 600; font-size: 14px; line-height: 21px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .product-title { font-weight: 700; font-size: 32px; line-height: 48px; letter-spacing: -0.32px; color: var(--text-dark); margin-bottom: 24px; }
+    .product-title-sub { font-weight: 500; font-size: 20px; color: var(--text-light); letter-spacing: -0.32px; }
+    .product-desc-wrap { width: 508px; max-width: 550px; margin-bottom: 24px; }
+    .product-desc { font-weight: 400; font-size: 16px; line-height: 27px; color: var(--text-light); }
+
+    .product-footer { display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding-top: 32px; width: 508px; border-top: 1px solid var(--border); }
+    .price-amount { font-weight: 700; font-size: 28px; line-height: 42px; color: var(--text-dark); }
+    .price-unit { font-weight: 500; font-size: 16px; line-height: 24px; color: var(--text-light); margin-left: 4px; }
+
+    .btn-sepet {
+      display: flex; flex-direction: row; align-items: center;
+      padding: 16px 32px; gap: 12px; width: 186.75px; height: 52px;
+      background: var(--gold); border-radius: 6px; border: none;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      font-weight: 600; font-size: 16px; color: var(--white);
+      transition: opacity 0.2s;
+    }
+    .btn-sepet:hover { opacity: 0.88; }
+
+    /* WHATSAPP */
+    .whatsapp-float { position: fixed; right: 64px; bottom: 63.73px; width: 64px; height: 64px; background: #27AE60; box-shadow: 0px 16px 32px rgba(0,0,0,0.1); border-radius: 32px; display: flex; justify-content: center; align-items: center; z-index: 99; text-decoration: none; }
+
+    /* FOOTER */
+    .footer { display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 64px; height: 159px; background: var(--cream-warm); border-top: 1px solid var(--border); }
+    .footer-brand { font-weight: 700; font-size: 20px; letter-spacing: 2px; color: var(--text-dark); }
+    .footer-copy { font-weight: 400; font-size: 14px; color: var(--text-light); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="#" class="nav-logo"><img src="https://www.figma.com/api/mcp/asset/d26167cf-e9b1-4c9e-9d6d-6e5c0d08042f" alt="Logo"/></a>
+  <ul class="nav-links">
+    <li><a href="#">Anasayfa</a></li>
+    <li><a href="#" class="active">Ürünler</a></li>
+    <li><a href="#">Hakkımızda</a></li>
+    <li><a href="#">İletişim</a></li>
+  </ul>
+  <div class="nav-icons">
+    <button class="nav-icon-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="#2C2B29" stroke-width="1.67"/><path d="M13.5 13.5L17 17" stroke="#2C2B29" stroke-width="1.67" stroke-linecap="round"/></svg></button>
+    <button class="nav-icon-btn cart-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="#2C2B29" stroke-width="1.67"/></svg><span class="cart-badge"></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <h1 class="page-header-title">Tüm Ürünlerimiz</h1>
+  <p class="page-header-desc">Gümüşhane'nin eşsiz doğasından sofralarınıza uzanan saf ve gurme lezzetlerimizi keşfedin.</p>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+  <div class="products-list">
+
+    <!-- Product 1 -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://www.figma.com/api/mcp/asset/e828450a-a1a2-459c-8d8e-4143f7247fc2" alt="Karakovan Petek Balı" class="product-img"/>
+        <span class="product-badge">Kargo Bedava</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Organik Petek Balı</div>
+        <h2 class="product-title">Karakovan Petek Balı</h2>
+        <div class="product-desc-wrap">
+          <p class="product-desc">Gümüşhane'nin 1750 rakımlı yaylalarında, arıların kendi ürettikleri balmumu ile tamamen doğal yollarla ördükleri, insan eli değmeden hazırlanan eşsiz karakovan petek balı. Yoğun aroması ve yüksek besin değeriyle en özel gurme lezzetimiz.</p>
+        </div>
+        <div class="product-footer">
+          <div><span class="price-amount">1850₺</span><span class="price-unit">/ kg</span></div>
+          <button class="btn-sepet">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="1.67"/><line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="1.67"/></svg>
+            Sepete Ekle
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://www.figma.com/api/mcp/asset/d06136f5-dea5-4749-aa8e-7356b3fabc7f" alt="Petek Çiçek Balı" class="product-img"/>
+        <span class="product-badge">Kargo Bedava</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Klasik Petek Balı</div>
+        <h2 class="product-title">Petek Çiçek Balı</h2>
+        <div class="product-desc-wrap">
+          <p class="product-desc">Yüksek rakımlı yaylalarımızın zengin bitki florasından elde edilen, ahşap çerçevelerde özenle üretilen klasik petek balımız. Kahvaltılarınızın vazgeçilmez doğal tatlandırıcısı ve sofralarınızın baş tacı.</p>
+        </div>
+        <div class="product-footer">
+          <div><span class="price-amount">1500₺</span><span class="price-unit">/ kg</span></div>
+          <button class="btn-sepet">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="1.67"/><line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="1.67"/></svg>
+            Sepete Ekle
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://www.figma.com/api/mcp/asset/891d569d-1b97-41cc-be85-7b6179a843f0" alt="Süzme Bal" class="product-img"/>
+        <span class="product-badge">Kargo Bedava</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Sıvı Bal</div>
+        <h2 class="product-title">Süzme Bal</h2>
+        <div class="product-desc-wrap">
+          <p class="product-desc">Peteklerinden özenle süzülerek elde edilen, altın sarısı rengi ve ipeksi kıvamıyla öne çıkan süzme çiçek balımız. Doğal ve saf yapısıyla hem kahvaltılarda hem de en özel tariflerinizde güvenle tüketebilirsiniz.</p>
+        </div>
+        <div class="product-footer">
+          <div><span class="price-amount">1550₺</span><span class="price-unit">/ kg</span></div>
+          <button class="btn-sepet">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="1.67"/><line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="1.67"/></svg>
+            Sepete Ekle
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://www.figma.com/api/mcp/asset/fa3eec0a-ffc8-4b96-9cd5-575d5f16734d" alt="Ham Propolis" class="product-img"/>
+        <span class="product-badge">Kargo Bedava</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Sağlık &amp; Takviye</div>
+        <h2 class="product-title">Ham Propolis <span class="product-title-sub">(100g)</span></h2>
+        <div class="product-desc-wrap">
+          <p class="product-desc">Arıların kovanlarını dış etkenlerden korumak için ürettikleri, antioksidan bakımından zengin doğal bir mucize. Bağışıklık sistemini destekleyici özelliğiyle bilinen saf ham propolis ekstraktı.</p>
+        </div>
+        <div class="product-footer">
+          <div><span class="price-amount">850₺</span></div>
+          <button class="btn-sepet">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="1.67"/><line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="1.67"/></svg>
+            Sepete Ekle
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-brand">GÜMÜŞHANE</span>
+  <span class="footer-copy">© 2024 Gümüşhane Premium Bal. Tüm Hakları Saklıdır.</span>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/905559952917" class="whatsapp-float" target="_blank">
+  <img src="https://www.figma.com/api/mcp/asset/f125e768-05b2-4217-8c36-71082b752e99" alt="WhatsApp" width="32" height="32"/>
+</a>
+
+</body>
+</html>

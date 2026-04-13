@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>İletişim – Gümüşhane Yayla Balı</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FFF8F2; --cream-warm: #FFF1D9; --card-bg: #F3E9E0;
+      --gold: #B86B00; --text-dark: #2C2B29; --text-light: #8B7A6D;
+      --white: #FFFFFF; --border: rgba(0,0,0,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text-dark); min-width: 1440px; }
+
+    /* ══ NAVBAR ══ */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 32px 64px; height: 148px;
+      background: rgba(255,255,255,0.002); backdrop-filter: blur(10px);
+    }
+    .nav-logo img { width: 158px; height: 84px; object-fit: contain; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: 15px; line-height: 22px;
+      color: #EEAA22; font-weight: 500; opacity: 0.8;
+    }
+    .nav-links a.active { font-weight: 600; opacity: 1; }
+    .nav-icons { display: flex; gap: 24px; align-items: center; }
+    .nav-icon-btn { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background: none; border: none; cursor: pointer; position: relative; }
+    .cart-badge { position: absolute; width: 8px; height: 8px; right: 4px; top: 4px; background: var(--gold); border-radius: 4px; }
+
+    /* ══ PAGE HEADER ══ */
+    .page-header {
+      width: 100%; height: 383px;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding: 160px 64px 80px; gap: 16px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                  url('https://www.figma.com/api/mcp/asset/e828450a-a1a2-459c-8d8e-4143f7247fc2') center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
+      margin-top: 148px;
+    }
+    .page-header-title {
+      font-weight: 700; font-size: 48px; line-height: 72px;
+      letter-spacing: -0.96px; color: var(--cream); text-align: center;
+      text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    }
+    .page-header-desc {
+      width: 577.96px; font-weight: 400; font-size: 18px; line-height: 27px;
+      color: #000; text-align: center;
+    }
+
+    /* ══ CONTACT CONTENT ══ */
+    .contact-section {
+      display: flex; justify-content: center;
+      background: var(--cream); padding: 80px 64px 120px;
+    }
+
+    .contact-inner {
+      display: flex; flex-direction: row; align-items: flex-start;
+      gap: 64px; width: 1072px;
+    }
+
+    /* LEFT - Info Cards */
+    .contact-left {
+      display: flex; flex-direction: column;
+      gap: 32px; width: 458.18px; flex-shrink: 0;
+      padding-bottom: 141px;
+    }
+
+    .contact-info-card {
+      display: flex; flex-direction: row; align-items: flex-start;
+      padding: 32px; gap: 24px;
+      width: 458.18px; min-height: 149px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0px 12px 32px rgba(0,0,0,0.02);
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .contact-info-card:hover { transform: translateY(-2px); }
+
+    .contact-icon-wrap {
+      display: flex; justify-content: center; align-items: center;
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: var(--cream-warm); border-radius: 24px;
+    }
+
+    .contact-card-body {
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: 8px; flex: 1;
+    }
+
+    .contact-card-title {
+      font-weight: 600; font-size: 18px; line-height: 27px;
+      color: var(--text-dark);
+    }
+
+    .contact-card-text {
+      font-weight: 400; font-size: 15px; line-height: 24px;
+      color: var(--text-light);
+    }
+
+    /* RIGHT - Form */
+    .contact-right {
+      flex: 1;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0px 12px 32px rgba(0,0,0,0.02);
+      border-radius: 8px;
+      padding: 49px;
+      position: relative;
+      min-height: 652px;
+    }
+
+    .form-title {
+      font-weight: 700; font-size: 32px; line-height: 48px;
+      letter-spacing: -0.32px; color: var(--text-dark);
+      margin-bottom: 32px;
+    }
+
+    .form-row {
+      display: flex; flex-direction: row; gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: 8px; flex: 1;
+    }
+
+    .form-group.full { flex: none; width: 100%; }
+
+    .form-label {
+      font-weight: 500; font-size: 14px; line-height: 21px;
+      color: var(--text-dark);
+    }
+
+    .form-input {
+      width: 100%; height: 57px;
+      padding: 16px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400; font-size: 15px; line-height: 22px;
+      color: var(--text-light);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus { border-color: var(--gold); }
+
+    .form-textarea {
+      width: 100%; height: 150px; min-height: 150px;
+      padding: 15px 16px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400; font-size: 15px; line-height: 22px;
+      color: var(--text-light);
+      outline: none; resize: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-textarea:focus { border-color: var(--gold); }
+
+    .btn-gonder {
+      display: flex; flex-direction: row;
+      justify-content: center; align-items: center;
+      padding: 16px 32px; gap: 12px;
+      width: 100%; height: 52px;
+      background: var(--gold); border-radius: 6px;
+      border: none; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600; font-size: 16px; line-height: 19px;
+      color: var(--white); text-align: center;
+      margin-top: 24px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-gonder:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ══ WHATSAPP ══ */
+    .whatsapp-float {
+      position: fixed; right: 64px; bottom: 63.73px;
+      width: 64px; height: 64px; background: #27AE60;
+      box-shadow: 0px 16px 32px rgba(0,0,0,0.1);
+      border-radius: 32px; display: flex; justify-content: center; align-items: center;
+      z-index: 99; text-decoration: none; transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.06); }
+
+    /* ══ FOOTER ══ */
+    .footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 64px; height: 159px;
+      background: var(--cream-warm); border-top: 1px solid var(--border);
+    }
+    .footer-brand { font-weight: 700; font-size: 20px; line-height: 30px; letter-spacing: 2px; color: var(--text-dark); }
+    .footer-copy { font-weight: 400; font-size: 14px; line-height: 21px; color: var(--text-light); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="https://www.figma.com/api/mcp/asset/d26167cf-e9b1-4c9e-9d6d-6e5c0d08042f" alt="Gümüşhane Yayla Balı"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Anasayfa</a></li>
+    <li><a href="products.html">Ürünler</a></li>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="#" class="active">İletişim</a></li>
+  </ul>
+  <div class="nav-icons">
+    <button class="nav-icon-btn">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="#2C2B29" stroke-width="1.67"/><path d="M13.5 13.5L17 17" stroke="#2C2B29" stroke-width="1.67" stroke-linecap="round"/></svg>
+    </button>
+    <button class="nav-icon-btn">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="#2C2B29" stroke-width="1.67"/><line x1="3" y1="6" x2="21" y2="6" stroke="#2C2B29" stroke-width="1.67"/></svg>
+      <span class="cart-badge"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <h1 class="page-header-title">Bize Ulaşın</h1>
+  <p class="page-header-desc">Doğal lezzetlerimiz hakkında sorularınız, siparişleriniz ve toptan alım talepleriniz için bizimle iletişime geçebilirsiniz.</p>
+</section>
+
+<!-- CONTACT CONTENT -->
+<section class="contact-section">
+  <div class="contact-inner">
+
+    <!-- LEFT: Info Cards -->
+    <div class="contact-left">
+
+      <!-- Card 1: Adres -->
+      <div class="contact-info-card">
+        <div class="contact-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#2C2B29" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="12" cy="9" r="2.5" stroke="#2C2B29" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <span class="contact-card-title">Üretim Çiftliği</span>
+          <p class="contact-card-text">Şiran Yaylaları, 1750 Rakım<br/>Gümüşhane, Türkiye</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Telefon -->
+      <div class="contact-info-card">
+        <div class="contact-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" stroke="#2C2B29" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <span class="contact-card-title">Telefon &amp; WhatsApp</span>
+          <p class="contact-card-text">+90 555 123 45 67<br/>Pzt - Cts: 09:00 - 18:00</p>
+        </div>
+      </div>
+
+      <!-- Card 3: E-Posta -->
+      <div class="contact-info-card">
+        <div class="contact-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="4" width="20" height="16" rx="2" stroke="#2C2B29" stroke-width="2"/>
+            <path d="M2 8l10 6 10-6" stroke="#2C2B29" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <span class="contact-card-title">E-Posta Adresi</span>
+          <p class="contact-card-text">bilgi@gumushanebal.com<br/>destek@gumushanebal.com</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Contact Form -->
+    <div class="contact-right">
+      <h2 class="form-title">Mesaj Gönderin</h2>
+
+      <form>
+        <!-- Row 1: Ad + E-posta -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Adınız Soyadınız</label>
+            <input type="text" class="form-input" placeholder="Örn: Ahmet Yılmaz"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-Posta Adresiniz</label>
+            <input type="email" class="form-input" placeholder="ornek@email.com"/>
+          </div>
+        </div>
+
+        <!-- Konu -->
+        <div class="form-group full" style="margin-bottom:24px;">
+          <label class="form-label">Konu</label>
+          <input type="text" class="form-input" placeholder="Hangi konuda bilgi almak istersiniz?"/>
+        </div>
+
+        <!-- Mesaj -->
+        <div class="form-group full">
+          <label class="form-label">Mesajınız</label>
+          <textarea class="form-textarea" placeholder="Bize detaylı olarak yazabilirsiniz..."></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-gonder">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 10L18 2L10 18L8 11L2 10Z" stroke="white" stroke-width="1.67" stroke-linejoin="round"/>
+          </svg>
+          Gönder
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-brand">GÜMÜŞHANE</span>
+  <span class="footer-copy">© 2024 Gümüşhane Premium Bal. Tüm Hakları Saklıdır.</span>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/905559952917" class="whatsapp-float" target="_blank">
+  <img src="https://www.figma.com/api/mcp/asset/f125e768-05b2-4217-8c36-71082b752e99" alt="WhatsApp" width="32" height="32"/>
+</a>
+
+</body>
+</html>
