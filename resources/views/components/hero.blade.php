@@ -154,15 +154,13 @@
 }
 
 .hero-img-wrap {
-  width: 420px;
+  width: 680px;
   max-width: 100%;
 }
 
 .hero-img {
   width: 100%;
   height: auto;
-  max-height: 700px;
-  object-fit: contain;
   display: block;
 }
 
@@ -308,7 +306,7 @@
   <div class="hero-right">
     <div class="hero-img-wrap">
       <img
-        src="{{ asset('images/ball.png') }}"
+        src="{{ asset('images/logo.jpeg') }}"
         alt="Gümüşhane arı çiftliği"
         class="hero-img"
       />
