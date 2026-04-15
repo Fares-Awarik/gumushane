@@ -7,7 +7,7 @@
 
 {{-- ══ PAGE HEADER ══ --}}
 <section class="page-header">
-  <div class="page-header-content">
+  <div class="page-header-content reveal">
     <h1 class="page-header-title">Tüm Ürünlerimiz</h1>
     <p class="page-header-desc">
       Gümüşhane'nin eşsiz doğasından sofralarınıza uzanan saf ve gurme lezzetlerimizi keşfedin.
@@ -17,10 +17,10 @@
 
 {{-- ══ PRODUCTS LIST ══ --}}
 <section class="products-section">
-  <div class="products-list">
+  <div class="products-list reveal-group">
 
     {{-- Product 1 --}}
-    <div class="product-card">
+    <div class="product-card reveal">
       <div class="product-img-wrap">
         <img src="{{ asset('images/1.jpeg') }}" alt="Karakovan Petek Balı" class="product-img"/>
         <span class="product-badge">Kargo Bedava</span>
@@ -43,7 +43,7 @@
     </div>
 
     {{-- Product 2 --}}
-    <div class="product-card">
+    <div class="product-card reveal">
       <div class="product-img-wrap">
         <img src="{{ asset('images/2.jpeg') }}" alt="Petek Çiçek Balı" class="product-img"/>
         <span class="product-badge">Kargo Bedava</span>
@@ -66,7 +66,7 @@
     </div>
 
     {{-- Product 3 --}}
-    <div class="product-card">
+    <div class="product-card reveal">
       <div class="product-img-wrap">
         <img src="{{ asset('images/4.jpeg') }}" alt="Süzme Bal" class="product-img"/>
         <span class="product-badge">Kargo Bedava</span>
@@ -89,9 +89,9 @@
     </div>
 
     {{-- Product 4 --}}
-    <div class="product-card">
+    <div class="product-card reveal">
       <div class="product-img-wrap">
-        <img src="{{ asset('images/0.png') }}" alt="Ham Propolis" class="product-img"/>
+        <img src="{{ asset('images/pro.jpeg') }}" alt="Ham Propolis" class="product-img"/>
         <span class="product-badge">Kargo Bedava</span>
       </div>
       <div class="product-info">
@@ -102,7 +102,7 @@
         </h2>
         <div class="product-desc-wrap">
           <p class="product-desc">
-            Arıların kovanlarını dış etkenlerden korumak için ürettikleri, antioksidan bakımından zengin doğal bir mucize. Bağışıklık sistemini destekleyici özelliğiyle bilinen saf ham propolis ekstraktı.
+            Propolis, arıların bitki tomurcuk ve reçinelerinden toplayıp işleyerek kovanı mikroplardan korumak ve yalıtım sağlamak amacıyla ürettiği, antibakteriyel, antiviral ve antioksidan özelliklere sahip doğal, reçinemsi bir arı ürünüdür. Bağışıklığı güçlendirir, üst solunum yolu enfeksiyonlarına, yara iyileşmesine ve ağız sağlığına iyi gelir
           </p>
         </div>
         <div class="product-footer">

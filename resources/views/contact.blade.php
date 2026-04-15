@@ -7,8 +7,8 @@
 <x-navbar />
 {{-- ══ PAGE HEADER ══ --}}
 <section class="page-header contact-header">
-  <h1 class="page-header-title">Bize Ulaşın</h1>
-  <p class="page-header-desc">Doğal lezzetlerimiz hakkında sorularınız, siparişleriniz ve toptan alım talepleriniz için bizimle iletişime geçebilirsiniz.</p>
+  <h1 class="page-header-title reveal">Bize Ulaşın</h1>
+  <p class="page-header-desc reveal">Doğal lezzetlerimiz hakkında sorularınız, siparişleriniz ve toptan alım talepleriniz için bizimle iletişime geçebilirsiniz.</p>
 </section>
 
 @if(session('success'))
@@ -20,7 +20,7 @@
   <div class="contact-inner">
 
     {{-- LEFT: Info Cards --}}
-    <div class="contact-left">
+    <div class="contact-left reveal-group reveal from-left">
       <div class="contact-info-card">
         <div class="contact-icon-wrap">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -29,7 +29,7 @@
           </svg>
         </div>
         <div class="contact-card-body">
-          <span class="contact-card-title">Üretim Çiftliği</span>
+          <span class="contact-card-title">Adres</span>
           <p class="contact-card-text">Şiran Yaylaları, 1750 Rakım<br/>Gümüşhane, Türkiye</p>
         </div>
       </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="contact-card-body">
           <span class="contact-card-title">Telefon &amp; WhatsApp</span>
-          <p class="contact-card-text">+90 555 123 45 67<br/>7/24 açıktır</p>
+          <p class="contact-card-text">+90 555 995 29 17<br/>7/24 açıktır</p>
         </div>
       </div>
 
@@ -61,7 +61,7 @@
     </div>
 
     {{-- RIGHT: Contact Form --}}
-    <div class="contact-right">
+    <div class="contact-right reveal from-right">
       <h2 class="form-title">Mesaj Gönderin</h2>
 
       <form action="{{ route('contact.send') }}" method="POST">

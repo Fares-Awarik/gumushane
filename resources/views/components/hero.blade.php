@@ -154,18 +154,16 @@
 }
 
 .hero-img-wrap {
-  width: 680px;
+  width: 420px;
   max-width: 100%;
-  height: 411px;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 .hero-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 700px;
+  object-fit: contain;
+  display: block;
 }
 
 /* ══════════════════════════════
@@ -189,7 +187,6 @@
 
   .hero-img-wrap {
     width: 100%;
-    height: 390px;
   }
 }
 
@@ -268,13 +265,17 @@
 <section class="hero">
 
   {{-- Hex BG 1 - cream --}}
-  <div class="hero-hex hero-hex-1">
-    <img src="https://www.figma.com/api/mcp/asset/d06136f5-dea5-4749-aa8e-7356b3fabc7f" alt="" aria-hidden="true"/>
+  <div class="hero-hex hero-hex-1" aria-hidden="true">
+    <svg viewBox="0 0 100 87" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="#FFF1D9"/>
+    </svg>
   </div>
 
   {{-- Hex BG 2 - gold --}}
-  <div class="hero-hex hero-hex-2">
-    <img src="https://www.figma.com/api/mcp/asset/891d569d-1b97-41cc-be85-7b6179a843f0" alt="" aria-hidden="true"/>
+  <div class="hero-hex hero-hex-2" aria-hidden="true">
+    <svg viewBox="0 0 100 87" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="#B86B00" opacity="0.18"/>
+    </svg>
   </div>
 
   {{-- LEFT --}}
@@ -300,12 +301,6 @@
 
     <div class="hero-btns">
       <a href="{{ route('products') }}" class="btn-siparis">Sipariş Ver</a>
-      <button class="btn-video" onclick="document.getElementById('videoModal').style.display='flex'">
-        <span class="play-circle">
-          <img src="https://www.figma.com/api/mcp/asset/ec0d474f-3e25-41e0-a9f1-95cdd7eb8df2" alt="" width="16" height="16"/>
-        </span>
-        <span class="btn-video-text">Hikayemizi İzle</span>
-      </button>
     </div>
   </div>
 
@@ -313,7 +308,7 @@
   <div class="hero-right">
     <div class="hero-img-wrap">
       <img
-        src="{{ asset('images/8.jpeg') }}"
+        src="{{ asset('images/ball.png') }}"
         alt="Gümüşhane arı çiftliği"
         class="hero-img"
       />

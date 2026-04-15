@@ -7,8 +7,8 @@
 
 {{-- ══ PAGE HEADER ══ --}}
 <section class="page-header about-header">
-  <h1 class="page-header-title">Hakkımızda</h1>
-  <p class="page-header-desc">Doğanın en saf halini, nesillerdir süregelen bir tutkuyla sofralarınıza taşıyoruz.</p>
+  <h1 class="page-header-title reveal">Hakkımızda</h1>
+  <p class="page-header-desc reveal">Doğanın en saf halini, nesillerdir süregelen bir tutkuyla sofralarınıza taşıyoruz.</p>
 </section>
 
 {{-- ══ ABOUT CONTENT ══ --}}
@@ -17,10 +17,10 @@
 
     {{-- Section 1 --}}
     <div class="about-section">
-      <div class="about-img-wrap">
+      <div class="about-img-wrap reveal from-left">
         <img src="{{ asset('images/5.jpeg') }}" alt="Gümüşhane yaylalarında arı kovanları" class="about-img"/>
       </div>
-      <div class="about-text">
+      <div class="about-text reveal from-right">
         <div class="about-category">Bizim Hikayemiz</div>
         <h2 class="about-title">1750 Rakımlı Yaylalardan Gelen Mucize</h2>
         <p class="about-body">
@@ -34,10 +34,10 @@
 
     {{-- Section 2 (reversed) --}}
     <div class="about-section reverse">
-      <div class="about-img-wrap">
+      <div class="about-img-wrap reveal from-right">
         <img src="{{ asset('images/3.jpeg') }}" alt="Geleneksel bal üretimi" class="about-img short"/>
       </div>
-      <div class="about-text">
+      <div class="about-text reveal from-left">
         <div class="about-category">Üretim Felsefemiz</div>
         <h2 class="about-title">Geleneksel Yöntemler, Katkısız Lezzet</h2>
         <p class="about-body">
@@ -50,9 +50,9 @@
     </div>
 
     {{-- Values Grid --}}
-    <div class="values-grid">
+    <div class="values-grid reveal-group">
 
-      <div class="value-item">
+      <div class="value-item reveal">
         <div class="value-icon-wrap">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
             <path d="M20 6C20 6 8 14 8 24C8 30.627 13.373 36 20 36C26.627 36 32 30.627 32 24C32 14 20 6 20 6Z" stroke="#B86B00" stroke-width="3.33" stroke-linejoin="round"/>
@@ -63,7 +63,7 @@
         <p class="value-desc">Ürünlerimiz hiçbir koruyucu veya katkı maddesi içermez. Arıların bize sunduğu bu mucizeyi en saf haliyle koruyoruz.</p>
       </div>
 
-      <div class="value-item">
+      <div class="value-item reveal">
         <div class="value-icon-wrap">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
             <path d="M20 6L10 11V22C10 28.627 14.477 34.373 20 36C25.523 34.373 30 28.627 30 22V11L20 6Z" stroke="#B86B00" stroke-width="3.33" stroke-linejoin="round"/>
@@ -74,7 +74,7 @@
         <p class="value-desc">Gümüşhane'nin endemik bitki türlerine sahip zengin florasında, uzmanlıkla ve büyük bir özenle hasat edilir.</p>
       </div>
 
-      <div class="value-item">
+      <div class="value-item reveal">
         <div class="value-icon-wrap">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="20" r="13" stroke="#B86B00" stroke-width="3.33"/>

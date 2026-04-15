@@ -249,7 +249,7 @@
 
     <a href="{{ route('home') }}" class="nav-logo">
       <img
-        src="{{ asset('images/logo.png') }}"
+        src="{{ asset('images/logo.jpeg') }}"
         alt="Gümüşhane Yayla Balı Logo"
         class="nav-logo-img"
       />
