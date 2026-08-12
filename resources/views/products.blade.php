@@ -35,7 +35,7 @@
         </div>
         <div class="product-footer">
           <div class="product-price">
-            <span class="price-amount">2500₺</span>
+            <span class="price-amount">2750₺</span>
             <span class="price-unit">/ kg</span>
           </div>
         </div>
@@ -58,7 +58,7 @@
         </div>
         <div class="product-footer">
           <div class="product-price">
-            <span class="price-amount">1500₺</span>
+            <span class="price-amount">1750₺</span>
             <span class="price-unit">/ kg</span>
           </div>
         </div>
@@ -81,7 +81,7 @@
         </div>
         <div class="product-footer">
           <div class="product-price">
-            <span class="price-amount">1550₺</span>
+            <span class="price-amount">1800₺</span>
             <span class="price-unit">/ kg</span>
           </div>
         </div>
@@ -107,7 +107,7 @@
         </div>
         <div class="product-footer">
           <div class="product-price">
-            <span class="price-amount">850₺</span>
+            <span class="price-amount">1250₺</span>
           </div>
         </div>
       </div>
